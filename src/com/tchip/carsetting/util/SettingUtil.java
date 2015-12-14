@@ -71,8 +71,13 @@ public class SettingUtil {
 	}
 
 	public static void setScreenOffTime(Context context, int time) {
-		Settings.System.putInt(context.getContentResolver(),
+		boolean isSuccess = Settings.System.putInt(
+				context.getContentResolver(),
 				android.provider.Settings.System.SCREEN_OFF_TIMEOUT, time);
+
+		MyLog.v("[SettingUtil]setScreenOffTime " + time + ",isSuccess:"
+				+ isSuccess);
+
 	}
 
 	public static int getScreenOffTime(Context context) {

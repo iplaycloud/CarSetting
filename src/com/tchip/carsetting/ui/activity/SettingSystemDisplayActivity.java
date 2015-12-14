@@ -214,7 +214,7 @@ public class SettingSystemDisplayActivity extends Activity {
 				SettingUtil.setScreenOffTime(context, 600000);
 				break;
 			case R.id.screenOffNone:
-				SettingUtil.setScreenOffTime(context, 98765432);
+				SettingUtil.setScreenOffTime(context, Integer.MAX_VALUE);
 				break;
 
 			default:

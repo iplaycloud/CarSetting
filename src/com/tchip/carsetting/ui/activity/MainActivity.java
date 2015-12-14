@@ -160,7 +160,7 @@ public class MainActivity extends Activity {
 		RelativeLayout layoutRippleFm = (RelativeLayout) findViewById(R.id.layoutRippleFm);
 		layoutRippleFm.setOnClickListener(new MyOnClickListener());
 
-		// 恢复出厂设置(GONE)
+		// 恢复出厂设置
 		RelativeLayout layoutRippleReset = (RelativeLayout) findViewById(R.id.layoutRippleReset);
 		layoutRippleReset.setOnClickListener(new MyOnClickListener());
 

@@ -151,10 +151,10 @@ public class OpenUtil {
 			activity.startActivity(intentVolume);
 			break;
 
-		case SETTING_RESET:
+		case SETTING_RESET://android.settings.BACKUP_AND_RESET_SETTINGS
 			try {
 				activity.startActivity(new Intent(
-						"android.settings.BACKUP_AND_RESET_SETTINGS"));
+						"android.settings.MASTER_CLEAR"));
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

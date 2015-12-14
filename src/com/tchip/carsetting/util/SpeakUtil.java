@@ -6,6 +6,7 @@ public class SpeakUtil {
 
 	public static void startSpeak(Context context, String content) {
 		// TODO: Speak
+		
 	}
 
 }

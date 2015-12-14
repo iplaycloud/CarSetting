@@ -621,8 +621,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="@dimen/setting_item_height"
                 android:background="@color/setting_item_bg"
-                android:clickable="true"
-                android:visibility="gone" >
+                android:clickable="true" >
 
                 <ImageView
                     android:layout_width="@dimen/setting_item_image_height"
@@ -640,6 +639,13 @@
                     android:textColor="@color/setting_item_title_color"
                     android:textSize="@dimen/setting_item_title_text_size" />
             </RelativeLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/setting_item_separator_height"
+                android:layout_marginLeft="@dimen/setting_item_separator_margin"
+                android:layout_marginRight="@dimen/setting_item_separator_margin"
+                android:background="@color/setting_item_separator" />
 
             <RelativeLayout
                 android:id="@+id/layoutRippleAbout"
