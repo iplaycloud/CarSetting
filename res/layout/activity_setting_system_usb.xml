@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/layoutTop"
+        android:layout_width="match_parent"
+        android:layout_height="93dp"
+        android:background="@drawable/ui_setting_top_bar_bg" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:text="USB连接设置"
+            android:textColor="@color/setting_item_title_color"
+            android:textSize="30sp" />
+
+        <RelativeLayout
+            android:id="@+id/layoutToSettingFromBright"
+            android:layout_width="90dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/ui_back_arrow_bg_grey"
+            android:visibility="gone" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ui_near_arrow_back" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutDate"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="15dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginTop="15dp"
+            android:orientation="vertical" >
+
+            <TextClock
+                android:id="@+id/textDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:format12Hour="MM月dd日"
+                android:format24Hour="MM月dd日"
+                android:textColor="#8b8e8f"
+                android:textSize="15sp" />
+
+            <TextClock
+                android:id="@+id/textWeek"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:format12Hour="EEEE"
+                android:format24Hour="EEEE"
+                android:textColor="#8b8e8f"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <TextClock
+            android:id="@+id/textClock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@id/layoutDate"
+            android:format12Hour="HH:mm"
+            android:format24Hour="HH:mm"
+            android:textColor="#ffffff"
+            android:textSize="45sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/textHint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="60dp"
+            android:background="@drawable/ui_file_remote_start"
+            android:text="如果您使用XP系统，请按照以下步骤连接PC\n  Windows7及更高版本系统无需执行此步骤"
+            android:textColor="#ffffff"
+            android:textSize="25sp" />
+
+        <RelativeLayout
+            android:id="@+id/layoutStepOne"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/selector_bluelight_bluedark" >
+
+            <TextView
+                android:id="@+id/textStepOne"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="1.选择“USB存储设备”连接方式"
+                android:textColor="#ffffff"
+                android:textSize="25sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layoutStepTwo"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/selector_bluelight_bluedark" >
+
+            <TextView
+                android:id="@+id/textStepTwo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="2.打开USB存储设备\n（不用时及时关闭）"
+                android:textColor="#ffffff"
+                android:textSize="25sp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/layoutTop"
+        android:layout_width="match_parent"
+        android:layout_height="93dp"
+        android:background="@drawable/ui_setting_top_bar_bg" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:text="显示设置"
+            android:textColor="@color/setting_item_title_color"
+            android:textSize="30sp" />
+
+        <RelativeLayout
+            android:id="@+id/layoutToSettingFromBright"
+            android:layout_width="90dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/ui_back_arrow_bg_grey"
+            android:visibility="gone" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ui_near_arrow_back" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutDate"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="15dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginTop="15dp"
+            android:orientation="vertical" >
+
+            <TextClock
+                android:id="@+id/textDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:format12Hour="MM月dd日"
+                android:format24Hour="MM月dd日"
+                android:textColor="#8b8e8f"
+                android:textSize="15sp" />
+
+            <TextClock
+                android:id="@+id/textWeek"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:format12Hour="EEEE"
+                android:format24Hour="EEEE"
+                android:textColor="#8b8e8f"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <TextClock
+            android:id="@+id/textClock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@id/layoutDate"
+            android:format12Hour="HH:mm"
+            android:format24Hour="HH:mm"
+            android:textColor="#ffffff"
+            android:textSize="45sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/setting_system_bright_item_height"
+            android:layout_margin="5dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:text="亮度自动调节"
+                android:textColor="#000000"
+                android:textSize="@dimen/setting_system_bright_text_size" />
+
+            <com.tchip.carsetting.view.SwitchButton
+                android:id="@+id/switchAutolight"
+                style="@style/SwitchButtonStyle"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="30dp"
+                app:animationVelocity="8"
+                app:measureFactor="1.5"
+                app:offDrawable="@drawable/ios_off"
+                app:onColor="#43d95d"
+                app:thumbDrawable="@drawable/ios_thumb"
+                app:thumb_marginBottom="-8dp"
+                app:thumb_marginLeft="-5dp"
+                app:thumb_marginRight="-5dp"
+                app:thumb_marginTop="-2.5dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="2dp"
+                android:background="#cccccc" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layoutSeekBar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/setting_system_bright_item_height"
+            android:orientation="horizontal" >
+
+            <SeekBar
+                android:id="@+id/brightSeekBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:max="196" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="2dp"
+                android:background="#cccccc" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/setting_system_bright_item_height"
+            android:layout_margin="5dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:text="屏幕自动关闭"
+                android:textColor="#000000"
+                android:textSize="@dimen/setting_system_bright_text_size" />
+
+            <RadioGroup
+                android:id="@+id/screenOffGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_margin="5dp"
+                android:orientation="horizontal" >
+
+                <RadioButton
+                    android:id="@+id/screenOff30Second"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/setting_system_bright_radio_margin"
+                    android:text="30秒"
+                    android:textColor="#1E88E5"
+                    android:textSize="@dimen/setting_system_bright_text_size" />
+
+                <RadioButton
+                    android:id="@+id/screenOff1min"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/setting_system_bright_radio_margin"
+                    android:text="1分"
+                    android:textColor="#1E88E5"
+                    android:textSize="@dimen/setting_system_bright_text_size" />
+
+                <RadioButton
+                    android:id="@+id/screenOff2min"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/setting_system_bright_radio_margin"
+                    android:text="2分"
+                    android:textColor="#1E88E5"
+                    android:textSize="@dimen/setting_system_bright_text_size" />
+
+                <RadioButton
+                    android:id="@+id/screenOff10min"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/setting_system_bright_radio_margin"
+                    android:text="10分"
+                    android:textColor="#1E88E5"
+                    android:textSize="@dimen/setting_system_bright_text_size" />
+
+                <RadioButton
+                    android:id="@+id/screenOffNone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="永不休眠"
+                    android:textColor="#1E88E5"
+                    android:textSize="@dimen/setting_system_bright_text_size" />
+            </RadioGroup>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="2dp"
+            android:background="#cccccc" />
+    </LinearLayout>
+
+</LinearLayout>

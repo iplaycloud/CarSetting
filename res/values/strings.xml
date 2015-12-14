@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">设置</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_setting_gravity">系统设置-碰撞侦测灵敏度</string>
+    <string name="setting_gravity_hint">设置合适的灵敏度：\n过低较难触发视频加锁，过高则容易导致误判</string>
+    <string name="lock_video_in_case_crash">视频加锁</string>
+    <string name="tilte_traffic_status">流量统计</string>
+    <string name="hint_no_network">无网络</string>
+
+</resources>

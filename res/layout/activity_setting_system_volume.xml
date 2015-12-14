@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/shape_setting_volume_bg"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="650dp"
+        android:layout_height="@dimen/setting_system_bright_item_height"
+        android:layout_margin="10dp" >
+
+        <ImageView
+            android:id="@+id/imageVolumeIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ui_icon_setting_volume" />
+
+        <SeekBar
+            android:id="@+id/volumeMedia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="5dp"
+            android:layout_toRightOf="@id/imageVolumeIcon"
+            android:max="15" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/setting_system_bright_item_height"
+        android:orientation="horizontal"
+        android:visibility="gone" >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:text="铃声"
+            android:textColor="#000000"
+            android:textSize="@dimen/setting_system_bright_text_size" />
+
+        <SeekBar
+            android:id="@+id/volumeRing"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="5dp"
+            android:layout_weight="12"
+            android:max="15" />
+    </LinearLayout>
+
+</LinearLayout>

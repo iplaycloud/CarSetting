@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:id="@+id/layoutTop"
+        android:layout_width="match_parent"
+        android:layout_height="90dp" >
+
+        <RelativeLayout
+            android:id="@+id/layoutBack"
+            android:layout_width="90dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true" >
+
+            <Button
+                android:id="@+id/btnBack"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/ui_back_arrow_bg_transparent" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ui_near_arrow_back" />
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/btnGo"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/ui_near_search" />
+
+        <EditText
+            android:id="@+id/textPass"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@id/btnGo"
+            android:layout_toRightOf="@id/layoutBack"
+            android:gravity="center"
+            android:hint="输入工程代码"
+            android:inputType="textPassword"
+            android:maxLength="5"
+            android:paddingLeft="5dp"
+            android:singleLine="true"
+            android:textColor="#1E88E5"
+            android:textColorHint="#cccccc"
+            android:textSize="30sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layoutMagic"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/layoutTop"
+        android:layout_marginTop="10dp"
+        android:visibility="invisible" >
+
+        <Button
+            android:id="@+id/btnDeviceTest"
+            android:layout_width="270dp"
+            android:layout_height="90dp"
+            android:layout_alignParentLeft="true"
+            android:text="设备测试"
+            android:textSize="28sp" />
+
+        <Button
+            android:id="@+id/btnSystemSetting"
+            android:layout_width="270dp"
+            android:layout_height="90dp"
+            android:layout_alignParentRight="true"
+            android:text="系统设置"
+            android:textSize="28sp" />
+
+        <Button
+            android:id="@+id/btnEngineerMode"
+            android:layout_width="270dp"
+            android:layout_height="90dp"
+            android:layout_toLeftOf="@id/btnSystemSetting"
+            android:layout_toRightOf="@id/btnDeviceTest"
+            android:text="工程模式"
+            android:textSize="28sp" />
+    </RelativeLayout>
+
+</RelativeLayout>

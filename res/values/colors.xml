@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 画面背景色 -->
+    <drawable name="layout_backgroud">#000000</drawable>
+
+    <!-- 分割线背景色 -->
+    <drawable name="line_background">#161823</drawable>
+
+    <color name="white">#FFFFFF</color>
+    <color name="blue_light">#3399FF</color>
+    <color name="blue_dark">#3333FF</color>
+
+    <!-- 控件按下时显示的颜色 -->
+    <color name="list_backgroud_color">#2fb3cb</color>
+    <color name="title_color">#0f8ec5</color>
+    <color name="content_color">#737373</color>
+
+    <!-- MyViewPager -->
+    <color name="holo_blue">#FF33E5B5</color>
+    <color name="green">#00FF00</color>
+    <color name="thumbColor">#66aaaaaa</color>
+    <color name="yellow">#FFF000</color>
+    <color name="gray">#A6A6A0</color>
+    <color name="orange">#ff9900</color>
+    <color name="deepcolor">#faaa5f</color>
+    <color name="shadowcolor">#333333</color>
+    <color name="naming">#ABABAB</color>
+    <color name="red">#FF0000</color>
+    <color name="background">#272727</color>
+    <color name="orange_yellow">#9b9ba0</color>
+
+    <drawable name="semi_black">#80000000</drawable>
+
+    <color name="remote_connect_text">#FFe78018</color>
+    <color name="remote_disconnect_text">#FF901821</color>
+    <color name="black">#000000</color>
+    <color name="trans_white">#afffffff</color>
+    <color name="blue">#0000ff</color>
+    <color name="divider_color">#6fffffff</color>
+    <color name="bottom_color">#00000000</color>
+    <color name="top_color">#01589e</color>
+    <color name="holo_blue_light">#ff33b5e5</color>
+    <color name="holo_blue_light2">#aa33b5e5</color>
+    <color name="transparent">#00000000</color>
+    <color name="half_transparent">#3f000000</color>
+    <color name="grey_white">#fff0f0f0</color>
+    <color name="grey_dark_light">#55666666</color>
+    <color name="grey_dark">#ff454545</color>
+    <color name="holo_blue_dark">#ff0099cc</color>
+    <color name="holo_orange_dark">#ffff8800</color>
+    <color name="dialog_text_hint">#ffb0b0b0</color>
+
+    <!-- Traffic Stats 流量 -->
+    <color name="toast_bg">#c01b1b1b</color>
+    <color name="toast_text">#f7dcaf</color>
+
+    <!-- File Manager -->
+    <color name="accent_color">#1E88E5</color>
+    <color name="accent_color_light">#7cb9ee</color>
+    <color name="color_window_background">#E5E5E5</color>
+
+    <!-- Chat Activity -->
+    <color name="ui_chat_voice_orange">#ffa500</color>
+
+    <!-- Setting Activity -->
+    <color name="setting_item_title_color">#b6b6b6</color>
+    <color name="setting_item_bg_grey">#29292d</color>
+    <color name="setting_item_bg">#111111</color>
+    <color name="setting_title_bg">#222222</color>
+    <color name="setting_item_separator">#343434</color>
+    <color name="setting_tab_on">#ec6100</color>
+    <color name="setting_tab_off">#262626</color>
+    <color name="setting_tab_text_off">#878787</color>
+    <color name="setting_tab_text_on">#ffffff</color>
+    <color name="setting_tab_bg">#000000</color>
+
+    <!-- Weather Activity -->
+    <color name="ui_weather_line_bg">#cccccc</color>
+
+    <!-- Back Arrow -->
+    <color name="ui_back_arrow_bg_black_normal">#000000</color>
+    <color name="ui_back_arrow_bg_black_pressed">#ff6900</color>
+    <color name="ui_back_arrow_bg_blue_normal">#00a0e9</color>
+    <color name="ui_back_arrow_bg_blue_pressed">#3366FF</color>
+    <color name="ui_back_arrow_bg_transparent_normal">#88000000</color>
+    <color name="ui_back_arrow_bg_transparent_pressed">#ff6900</color>
+    <color name="ui_back_arrow_bg_grey_normal">#29292d</color>
+    <color name="ui_back_arrow_bg_grey_pressed">#444448</color>
+
+    <!-- WeChat -->
+
+    <color name="grey">#58616d</color>
+    <color name="darkgrey">#ff404040</color>
+    <color name="toasterro">#9fd524</color>
+    <color name="lightgrey">#ff888888</color>
+    <color name="semitransparent">#80000000</color>
+    <color name="lightransparent">#a0000000</color>
+    <color name="navpage">#FFE1E8EB</color>
+
+</resources>
