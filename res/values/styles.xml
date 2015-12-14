@@ -56,5 +56,21 @@
         <item name="android:windowActionBar">false</item>
         <item name="android:windowNoTitle">true</item>
     </style>
+    
+        <style name="AppTranslucentTheme" >
+        <item name="android:windowActionBarOverlay">true</item>
+        <item name="android:actionBarSize">480dp</item>
+        <item name="android:actionButtonStyle">@style/FileActionButtonStyle</item>
+    </style>
+
+    <style name="FileActionButtonStyle">
+        <item name="android:minWidth">800dip</item>
+        <item name="android:paddingLeft">0dip</item>
+         <item name="android:scaleType">matrix</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:paddingTop">0dip</item>
+        <item name="android:paddingBottom">0dip</item>
+        <item name="android:paddingRight">0dip</item>
+    </style>
 
 </resources>
