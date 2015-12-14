@@ -1,11 +1,13 @@
-package com.tchip.carsetting;
+package com.tchip.carsetting.ui.activity;
 
 import com.tchip.carsetting.Constant;
 import com.tchip.carsetting.R;
+import com.tchip.carsetting.Constant.Module;
+import com.tchip.carsetting.Constant.MySP;
+import com.tchip.carsetting.Constant.Path;
+import com.tchip.carsetting.R.id;
+import com.tchip.carsetting.R.layout;
 import com.tchip.carsetting.model.Typefaces;
-import com.tchip.carsetting.ui.activity.MagicActivity;
-import com.tchip.carsetting.ui.activity.SettingGravityActivity;
-import com.tchip.carsetting.ui.activity.SettingSystemUsbActivity;
 import com.tchip.carsetting.util.MyLog;
 import com.tchip.carsetting.util.OpenUtil;
 import com.tchip.carsetting.util.SettingUtil;

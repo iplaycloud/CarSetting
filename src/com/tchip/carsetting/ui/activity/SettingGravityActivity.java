@@ -8,6 +8,7 @@ import com.tchip.carsetting.view.SwitchButton;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
@@ -56,6 +57,10 @@ public class SettingGravityActivity extends Activity {
 				editor.putBoolean("crashOn", isChecked);
 				editor.commit();
 				MyApplication.isCrashOn = isChecked;
+
+				// 通知CarLauncher
+				sendBroadcast(new Intent("com.tchip.SETTING_SYNC").putExtra(
+						"content", isChecked ? "crashOn" : "crashOff"));
 			}
 		});
 
@@ -76,6 +81,25 @@ public class SettingGravityActivity extends Activity {
 						MyApplication.crashSensitive = crashSensitive;
 						editor.putInt("crashSensitive", crashSensitive);
 						editor.commit();
+
+						// 通知CarLauncher
+						String content = "crashMiddle";
+						switch (crashSensitive) {
+						case 0:
+							content = "crashLow";
+							break;
+
+						case 2:
+							content = "crashHigh";
+							break;
+
+						case 1:
+						default:
+							content = "crashMiddle";
+							break;
+						}
+						sendBroadcast(new Intent("com.tchip.SETTING_SYNC")
+								.putExtra("content", content));
 					}
 
 					@Override

@@ -21,6 +21,7 @@ import com.tchip.carsetting.Constant;
 import android.app.KeyguardManager;
 import android.app.KeyguardManager.KeyguardLock;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.media.AudioManager;
@@ -225,11 +226,9 @@ public class SettingUtil {
 	/**
 	 * 停车侦测开关节点
 	 * 
-	 * 2：打开
+	 * 2：打开(默认)
 	 * 
 	 * 3：关闭
-	 * 
-	 * 默认关闭
 	 */
 	public static File fileParkingMonitor = new File(
 			"/sys/devices/platform/mt-i2c.1/i2c-1/1-007f/back_car_status");
@@ -248,6 +247,10 @@ public class SettingUtil {
 		editor.putBoolean(Constant.MySP.STR_PARKING_ON, isParkingOn);
 		editor.commit();
 		MyLog.v("[SettingUtil]setParkingMonitor:" + isParkingOn);
+
+		// 通知CarLauncher
+		context.sendBroadcast(new Intent("com.tchip.SETTING_SYNC").putExtra(
+				"content", isParkingOn ? "parkOn" : "parkOff"));
 	}
 
 	/**
