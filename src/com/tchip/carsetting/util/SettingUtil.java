@@ -159,7 +159,6 @@ public class SettingUtil {
 				OutputStream output = null;
 				OutputStreamWriter outputWrite = null;
 				PrintWriter print = null;
-
 				try {
 					output = new FileOutputStream(file);
 					outputWrite = new OutputStreamWriter(output);
@@ -167,7 +166,6 @@ public class SettingUtil {
 					print.print(strbuf.toString());
 					print.flush();
 					output.close();
-
 				} catch (FileNotFoundException e) {
 					e.printStackTrace();
 					Log.e(Constant.TAG, "SaveFileToNode:output error");

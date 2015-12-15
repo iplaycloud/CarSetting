@@ -24,11 +24,13 @@ import android.content.SharedPreferences.Editor;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.View.OnLongClickListener;
 import android.widget.CompoundButton;
 import android.widget.RelativeLayout;
+import android.widget.Switch;
 import android.widget.TextClock;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 
@@ -39,6 +41,8 @@ public class MainActivity extends Activity {
 	private WifiManager wifiManager;
 
 	private SwitchButton switchWifi, switchParking;
+
+	private Switch switchWifiSystem;
 
 	/** WiFi状态监听器 **/
 	private IntentFilter wifiIntentFilter;
@@ -94,18 +98,20 @@ public class MainActivity extends Activity {
 		switchWifi = (SwitchButton) findViewById(R.id.switchWifi);
 		wifiManager = (WifiManager) getSystemService(Context.WIFI_SERVICE);
 		switchWifi.setChecked(wifiManager.isWifiEnabled());
+
 		switchWifi.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 
 			@Override
 			public void onCheckedChanged(CompoundButton buttonView,
 					boolean isChecked) {
-				wifiManager.setWifiEnabled(isChecked);
+				if (isChecked != wifiManager.isWifiEnabled()) {
+					wifiManager.setWifiEnabled(isChecked);
+				}
 			}
 		});
 
 		wifiIntentFilter = new IntentFilter();
 		wifiIntentFilter.addAction(WifiManager.WIFI_STATE_CHANGED_ACTION);
-		// wifiIntentFilter.addAction(WifiManager.RSSI_CHANGED_ACTION);
 		wifiIntentFilter.setPriority(Integer.MAX_VALUE);
 		// 注册wifi消息处理器
 		registerReceiver(wifiIntentReceiver, wifiIntentFilter);
@@ -283,12 +289,16 @@ public class MainActivity extends Activity {
 			int wifi_state = intent.getIntExtra("wifi_state", 0);
 
 			switch (wifi_state) {
-			case WifiManager.WIFI_STATE_ENABLED:
+
 			case WifiManager.WIFI_STATE_ENABLING:
 			case WifiManager.WIFI_STATE_DISABLING:
-			case WifiManager.WIFI_STATE_DISABLED:
 			case WifiManager.WIFI_STATE_UNKNOWN:
-				switchWifi.setChecked(wifiManager.isWifiEnabled());
+				break;
+			case WifiManager.WIFI_STATE_DISABLED:
+			case WifiManager.WIFI_STATE_ENABLED:
+				if (wifiManager.isWifiEnabled() != switchWifi.isChecked()) {
+					switchWifi.setChecked(wifiManager.isWifiEnabled());
+				}
 				break;
 			}
 		}

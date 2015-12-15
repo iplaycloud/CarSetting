@@ -207,6 +207,7 @@
                     android:src="@drawable/ui_setting_system_wifi" />
 
                 <TextView
+                    android:id="@+id/textView1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
@@ -230,6 +231,7 @@
                     app:thumb_marginLeft="-5dp"
                     app:thumb_marginRight="-5dp"
                     app:thumb_marginTop="-2.5dp" />
+
             </RelativeLayout>
 
             <View
