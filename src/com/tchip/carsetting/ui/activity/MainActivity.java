@@ -113,8 +113,6 @@ public class MainActivity extends Activity {
 		wifiIntentFilter = new IntentFilter();
 		wifiIntentFilter.addAction(WifiManager.WIFI_STATE_CHANGED_ACTION);
 		wifiIntentFilter.setPriority(Integer.MAX_VALUE);
-		// 注册wifi消息处理器
-		registerReceiver(wifiIntentReceiver, wifiIntentFilter);
 
 		// 热点共享
 		RelativeLayout layoutWifiAp = (RelativeLayout) findViewById(R.id.layoutWifiAp);
@@ -306,25 +304,37 @@ public class MainActivity extends Activity {
 
 	@Override
 	public void onResume() {
-		MyLog.v("[SettingFragment]onResume");
+		MyLog.v("[Main]onResume");
+
+		try {
+			// 注册wifi消息处理器
+			registerReceiver(wifiIntentReceiver, wifiIntentFilter);
+			// Update WiFi Switch
+			if (wifiManager.isWifiEnabled() != switchWifi.isChecked()) {
+				switchWifi.setChecked(wifiManager.isWifiEnabled());
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
 		super.onResume();
 	}
 
 	@Override
 	public void onPause() {
-		MyLog.v("[SettingFragment]onPause");
+		MyLog.v("[Main]onPause");
+		// 取消注册wifi消息处理器
+		if (wifiIntentReceiver != null) {
+			unregisterReceiver(wifiIntentReceiver);
+		}
+		
 		super.onPause();
 	}
 
 	@Override
 	public void onDestroy() {
-		MyLog.v("[SettingFragment]onPause");
-
-		// 取消注册wifi消息处理器
-		if (wifiIntentReceiver != null) {
-			unregisterReceiver(wifiIntentReceiver);
-		}
-
+		MyLog.v("[Main]onPause");
+		
 		super.onDestroy();
 	}
 
