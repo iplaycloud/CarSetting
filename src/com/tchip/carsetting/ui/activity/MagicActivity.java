@@ -53,6 +53,8 @@ public class MagicActivity extends Activity {
 		Button btnSystemSetting = (Button) findViewById(R.id.btnSystemSetting);
 		btnSystemSetting.setOnClickListener(new MyOnClickListener());
 
+		Button btnMtkLogger = (Button) findViewById(R.id.btnMtkLogger);
+		btnMtkLogger.setOnClickListener(new MyOnClickListener());
 	}
 
 	class MyOnClickListener implements View.OnClickListener {
@@ -81,6 +83,10 @@ public class MagicActivity extends Activity {
 			case R.id.btnSystemSetting:
 				OpenUtil.openModule(MagicActivity.this,
 						MODULE_TYPE.SETTING_SYSTEM);
+				break;
+
+			case R.id.btnMtkLogger:
+				OpenUtil.openModule(MagicActivity.this, MODULE_TYPE.MTK_LOGGER);
 				break;
 
 			case R.id.layoutBack:

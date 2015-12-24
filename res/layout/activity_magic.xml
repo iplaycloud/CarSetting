@@ -86,6 +86,16 @@
             android:layout_toRightOf="@id/btnDeviceTest"
             android:text="工程模式"
             android:textSize="28sp" />
+
+        <Button
+            android:id="@+id/btnMtkLogger"
+            android:layout_width="270dp"
+            android:layout_height="90dp"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/btnDeviceTest"
+            android:text="MTKLogger"
+            android:textColor="#0000ff"
+            android:textSize="28sp" />
     </RelativeLayout>
 
 </RelativeLayout>

@@ -16,6 +16,9 @@ public class OpenUtil {
 		/** 工程模式 **/
 		ENGINEER_MODE,
 
+		/** MTKLogger **/
+		MTK_LOGGER,
+
 		/** 关于 **/
 		SETTING_ABOUT,
 
@@ -78,6 +81,18 @@ public class OpenUtil {
 						"com.mediatek.engineermode.EngineerMode");
 				intentEngineerMode.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 				activity.startActivity(intentEngineerMode);
+			} catch (Exception e) {
+
+			}
+			break;
+
+		case MTK_LOGGER:
+			try {
+				Intent intentMtkLogger = new Intent(Intent.ACTION_VIEW);
+				intentMtkLogger.setClassName("com.mediatek.mtklogger",
+						"com.mediatek.mtklogger.MainActivity");
+				intentMtkLogger.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+				activity.startActivity(intentMtkLogger);
 			} catch (Exception e) {
 
 			}
@@ -151,7 +166,7 @@ public class OpenUtil {
 			activity.startActivity(intentVolume);
 			break;
 
-		case SETTING_RESET://android.settings.BACKUP_AND_RESET_SETTINGS
+		case SETTING_RESET:// android.settings.BACKUP_AND_RESET_SETTINGS
 			try {
 				activity.startActivity(new Intent(
 						"android.settings.MASTER_CLEAR"));
