@@ -2,11 +2,6 @@ package com.tchip.carsetting.ui.activity;
 
 import com.tchip.carsetting.Constant;
 import com.tchip.carsetting.R;
-import com.tchip.carsetting.Constant.Module;
-import com.tchip.carsetting.Constant.MySP;
-import com.tchip.carsetting.Constant.Path;
-import com.tchip.carsetting.R.id;
-import com.tchip.carsetting.R.layout;
 import com.tchip.carsetting.model.Typefaces;
 import com.tchip.carsetting.util.MyLog;
 import com.tchip.carsetting.util.OpenUtil;
@@ -122,6 +117,13 @@ public class MainActivity extends Activity {
 		RelativeLayout layoutRippleTraffic = (RelativeLayout) findViewById(R.id.layoutRippleTraffic);
 		layoutRippleTraffic.setOnClickListener(new MyOnClickListener());
 
+		// APN设置
+		RelativeLayout layoutApnSetting = (RelativeLayout) findViewById(R.id.layoutApnSetting);
+		layoutApnSetting
+				.setVisibility(Constant.Module.hasAPNSetting ? View.VISIBLE
+						: View.GONE);
+		layoutApnSetting.setOnClickListener(new MyOnClickListener());
+
 		// 碰撞侦测
 		RelativeLayout layoutGravity = (RelativeLayout) findViewById(R.id.layoutGravity);
 		layoutGravity.setOnClickListener(new MyOnClickListener());
@@ -221,6 +223,10 @@ public class MainActivity extends Activity {
 						MODULE_TYPE.SETTING_DATA_USAGE);
 				break;
 
+			case R.id.layoutApnSetting:
+				OpenUtil.openModule(MainActivity.this, MODULE_TYPE.SETTING_APN);
+				break;
+
 			case R.id.layoutGravity:
 				Intent intentGravity = new Intent(MainActivity.this,
 						SettingGravityActivity.class);
@@ -316,7 +322,7 @@ public class MainActivity extends Activity {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 		super.onResume();
 	}
 
@@ -327,14 +333,14 @@ public class MainActivity extends Activity {
 		if (wifiIntentReceiver != null) {
 			unregisterReceiver(wifiIntentReceiver);
 		}
-		
+
 		super.onPause();
 	}
 
 	@Override
 	public void onDestroy() {
 		MyLog.v("[Main]onPause");
-		
+
 		super.onDestroy();
 	}
 

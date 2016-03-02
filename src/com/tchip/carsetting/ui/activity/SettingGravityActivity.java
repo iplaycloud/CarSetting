@@ -1,7 +1,7 @@
 package com.tchip.carsetting.ui.activity;
 
 import com.tchip.carsetting.Constant;
-import com.tchip.carsetting.MyApplication;
+import com.tchip.carsetting.MyApp;
 import com.tchip.carsetting.R;
 import com.tchip.carsetting.util.MyLog;
 import com.tchip.carsetting.view.SwitchButton;
@@ -56,7 +56,7 @@ public class SettingGravityActivity extends Activity {
 					boolean isChecked) {
 				editor.putBoolean("crashOn", isChecked);
 				editor.commit();
-				MyApplication.isCrashOn = isChecked;
+				MyApp.isCrashOn = isChecked;
 
 				// 通知CarLauncher
 				sendBroadcast(new Intent("com.tchip.SETTING_SYNC").putExtra(
@@ -78,7 +78,7 @@ public class SettingGravityActivity extends Activity {
 						int crashSensitive = seekBar.getProgress();
 						MyLog.v("[SettingGravity] Set crash sensitive:"
 								+ crashSensitive);
-						MyApplication.crashSensitive = crashSensitive;
+						MyApp.crashSensitive = crashSensitive;
 						editor.putInt("crashSensitive", crashSensitive);
 						editor.commit();
 

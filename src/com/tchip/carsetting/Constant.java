@@ -106,6 +106,12 @@ public interface Constant {
 
 		/** 停车侦测是否默认打开 **/
 		public static final boolean parkDefaultOn = true;
+
+		/** 是否是公版 */
+		public static final boolean isPublic = false;
+
+		/** 是否显示APN设置 */
+		public static final boolean hasAPNSetting = !isPublic;
 	}
 
 	/**

@@ -4,7 +4,7 @@ import android.app.Application;
 import android.content.SharedPreferences;
 
 
-public class MyApplication extends Application {
+public class MyApp extends Application {
 
 
 

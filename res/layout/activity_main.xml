@@ -231,7 +231,6 @@
                     app:thumb_marginLeft="-5dp"
                     app:thumb_marginRight="-5dp"
                     app:thumb_marginTop="-2.5dp" />
-
             </RelativeLayout>
 
             <View
@@ -295,6 +294,38 @@
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="@dimen/setting_item_text_margin_left"
                     android:text="@string/tilte_traffic_status"
+                    android:textColor="@color/setting_item_title_color"
+                    android:textSize="@dimen/setting_item_title_text_size" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/setting_item_separator_height"
+                android:layout_marginLeft="@dimen/setting_item_separator_margin"
+                android:layout_marginRight="@dimen/setting_item_separator_margin"
+                android:background="@color/setting_item_separator" />
+
+            <RelativeLayout
+                android:id="@+id/layoutApnSetting"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/setting_item_height"
+                android:background="@color/setting_item_bg"
+                android:clickable="true"
+                android:visibility="visible" >
+
+                <ImageView
+                    android:layout_width="@dimen/setting_item_image_height"
+                    android:layout_height="@dimen/setting_item_image_height"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/setting_item_image_margin_left"
+                    android:src="@drawable/ui_setting_system_app" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/setting_item_text_margin_left"
+                    android:text="@string/tilte_apn_setting"
                     android:textColor="@color/setting_item_title_color"
                     android:textSize="@dimen/setting_item_title_text_size" />
             </RelativeLayout>

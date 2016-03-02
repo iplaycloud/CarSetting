@@ -22,6 +22,9 @@ public class OpenUtil {
 		/** 关于 **/
 		SETTING_ABOUT,
 
+		/** APN */
+		SETTING_APN,
+
 		/** 应用 **/
 		SETTING_APP,
 
@@ -102,6 +105,15 @@ public class OpenUtil {
 			try {
 				activity.startActivity(new Intent(
 						android.provider.Settings.ACTION_DEVICE_INFO_SETTINGS));
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			break;
+
+		case SETTING_APN:
+			try {
+				activity.startActivity(new Intent(
+						android.provider.Settings.ACTION_APN_SETTINGS));
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
