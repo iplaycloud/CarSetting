@@ -10,60 +10,74 @@ import android.content.Intent;
 public class OpenUtil {
 
 	public enum MODULE_TYPE {
-		/** 设备测试 **/
+		/** 性能监视器 */
+		CPU_INFO,
+
+		/** 设备测试 */
 		DEVICE_TEST,
 
-		/** 工程模式 **/
+		/** 工程模式 */
 		ENGINEER_MODE,
 
-		/** MTKLogger **/
+		/** MTKLogger */
 		MTK_LOGGER,
 
-		/** 关于 **/
+		/** 关于 */
 		SETTING_ABOUT,
 
 		/** APN */
 		SETTING_APN,
 
-		/** 应用 **/
+		/** 应用 */
 		SETTING_APP,
 
-		/** 流量使用情况 **/
+		/** 流量使用情况 */
 		SETTING_DATA_USAGE,
 
-		/** 日期和时间 **/
+		/** 日期和时间 */
 		SETTING_DATE,
 
-		/** 显示设置 **/
+		/** 显示设置 */
 		SETTING_DISPLAY,
 
-		/** FM发射设置 **/
+		/** FM发射设置 */
 		SETTING_FM,
 
-		/** 位置 **/
+		/** 位置 */
 		SETTING_LOCATION,
 
-		/** 音量设置 **/
+		/** 音量设置 */
 		SETTING_VOLUME,
 
-		/** 备份和重置 **/
+		/** 备份和重置 */
 		SETTING_RESET,
 
-		/** 存储设置 **/
+		/** 存储设置 */
 		SETTING_STORAGE,
 
-		/** 系统设置 **/
+		/** 系统设置 */
 		SETTING_SYSTEM,
 
-		/** Wi-Fi **/
+		/** Wi-Fi */
 		WIFI,
 
-		/** Wi-Fi热点 **/
+		/** Wi-Fi热点 */
 		WIFI_AP
 	}
 
 	public static void openModule(Activity activity, MODULE_TYPE moduleTye) {
 		switch (moduleTye) {
+		case CPU_INFO:
+			try {
+				Intent intentCPUInfo = new Intent(Intent.ACTION_VIEW);
+				intentCPUInfo.setClassName("eu.chainfire.perfmon",
+						"com.common.activity.MainActivity");
+				intentCPUInfo.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+				activity.startActivity(intentCPUInfo);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			break;
 
 		case DEVICE_TEST:
 			try {

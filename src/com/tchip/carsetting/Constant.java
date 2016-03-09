@@ -111,7 +111,7 @@ public interface Constant {
 		public static final boolean isPublic = false;
 
 		/** 是否显示APN设置 */
-		public static final boolean hasAPNSetting = !isPublic;
+		public static final boolean hasAPNSetting = false; // !isPublic;
 	}
 
 	/**

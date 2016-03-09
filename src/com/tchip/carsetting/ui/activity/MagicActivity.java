@@ -55,6 +55,9 @@ public class MagicActivity extends Activity {
 
 		Button btnMtkLogger = (Button) findViewById(R.id.btnMtkLogger);
 		btnMtkLogger.setOnClickListener(new MyOnClickListener());
+
+		Button btnCPUInfo = (Button) findViewById(R.id.btnCPUInfo);
+		btnCPUInfo.setOnClickListener(new MyOnClickListener());
 	}
 
 	class MyOnClickListener implements View.OnClickListener {
@@ -87,6 +90,10 @@ public class MagicActivity extends Activity {
 
 			case R.id.btnMtkLogger:
 				OpenUtil.openModule(MagicActivity.this, MODULE_TYPE.MTK_LOGGER);
+				break;
+
+			case R.id.btnCPUInfo:
+				OpenUtil.openModule(MagicActivity.this, MODULE_TYPE.CPU_INFO);
 				break;
 
 			case R.id.layoutBack:
