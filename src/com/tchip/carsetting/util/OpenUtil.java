@@ -46,6 +46,9 @@ public class OpenUtil {
 		/** 位置 */
 		SETTING_LOCATION,
 
+		/** 升级设置 */
+		SETTING_OTA,
+
 		/** 音量设置 */
 		SETTING_VOLUME,
 
@@ -181,6 +184,18 @@ public class OpenUtil {
 						android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS));
 			} catch (Exception e) {
 				e.printStackTrace();
+			}
+			break;
+
+		case SETTING_OTA:
+			try {
+				Intent intentSettingOTA = new Intent(Intent.ACTION_VIEW);
+				intentSettingOTA.setClassName("com.tchipota",
+						"com.tchipota.MainActivity");
+				intentSettingOTA.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+				activity.startActivity(intentSettingOTA);
+			} catch (Exception e) {
+
 			}
 			break;
 

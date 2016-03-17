@@ -170,6 +170,10 @@ public class MainActivity extends Activity {
 		RelativeLayout layoutRippleReset = (RelativeLayout) findViewById(R.id.layoutRippleReset);
 		layoutRippleReset.setOnClickListener(new MyOnClickListener());
 
+		// OTA
+		RelativeLayout layoutOTA = (RelativeLayout) findViewById(R.id.layoutOTA);
+		layoutOTA.setOnClickListener(new MyOnClickListener());
+
 		// 关于设备
 		RelativeLayout layoutRippleAbout = (RelativeLayout) findViewById(R.id.layoutRippleAbout);
 		layoutRippleAbout.setOnClickListener(new MyOnClickListener());
@@ -267,6 +271,10 @@ public class MainActivity extends Activity {
 			case R.id.layoutRippleReset:
 				OpenUtil.openModule(MainActivity.this,
 						MODULE_TYPE.SETTING_RESET);
+				break;
+
+			case R.id.layoutOTA:
+				OpenUtil.openModule(MainActivity.this, MODULE_TYPE.SETTING_OTA);
 				break;
 
 			case R.id.layoutRippleAbout:
