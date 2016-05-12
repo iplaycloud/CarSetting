@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.tchip.carsetting"
     android:versionCode="1"
-    android:versionName="2016.04.18-22:10" >
+    android:versionName="2016.05.12-20:55" >
 
     <uses-sdk
         android:minSdkVersion="19"
