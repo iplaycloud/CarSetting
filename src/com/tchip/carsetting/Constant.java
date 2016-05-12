@@ -72,7 +72,7 @@ public interface Constant {
 	public static final class Module {
 
 		/** 进入MagicActivity的密码 */
-		public static final String MagicCode = "55555";
+		public static final String MagicCode = "13578";
 
 		/** 是否有用户中心 */
 		public static final boolean hasUserCenter = false;

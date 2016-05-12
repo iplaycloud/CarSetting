@@ -6,9 +6,9 @@ import com.tchip.carsetting.util.OpenUtil;
 import com.tchip.carsetting.util.OpenUtil.MODULE_TYPE;
 
 import android.app.Activity;
-import android.content.ComponentName;
-import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -41,6 +41,30 @@ public class MagicActivity extends Activity {
 		btnBack.setOnClickListener(new MyOnClickListener());
 
 		textPass = (EditText) findViewById(R.id.textPass);
+		textPass.addTextChangedListener(new TextWatcher() {
+
+			@Override
+			public void onTextChanged(CharSequence s, int start, int before,
+					int count) {
+
+			}
+
+			@Override
+			public void beforeTextChanged(CharSequence s, int start, int count,
+					int after) {
+
+			}
+
+			@Override
+			public void afterTextChanged(Editable s) {
+
+				String strInput = textPass.getText().toString();
+				if (Constant.Module.MagicCode.equals(strInput)) {
+					layoutMagic.setVisibility(View.VISIBLE);
+				}
+
+			}
+		});
 		btnGo = (Button) findViewById(R.id.btnGo);
 		btnGo.setOnClickListener(new MyOnClickListener());
 
